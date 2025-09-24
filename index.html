@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <title>Stable-Sim2Real</title>
+  <link rel="icon" type="image/x-icon" href="static/images/icon_final.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <img src="static/images/icon_final.jpg" alt="" width="200" height="50"/>
+            <h1 class="title is-1 publication-title">Stable-Sim2Real: 
+              <br>Exploring Simulation of Real-Captured 3D Data with Two-Stage Depth Diffusion</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://mutianxu.github.io/" target="_blank">Mutian Xu</a><sup>1</sup>,</span>
+                <span class="author-block">
+                  <a href="https://github.com/hugoycj" target="_blank">Chongjie Ye</a><sup>2,3,1</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://haolinliu97.github.io/" target="_blank">Haolin Liu</a><sup>4</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://yushuang-wu.github.io/" target="_blank">Yushuang Wu</a><sup>5</sup>,</span>
+                    <span class="author-block">
+                      <a href="https://scholar.google.com/citations?user=HA5zLp4AAAAJ&hl=zh-CN" target="_blank">Jiahao Chang</a><sup>1</sup>,</span>
+                      <span class="author-block">
+                        <a href="https://gaplab.cuhk.edu.cn/" target="_blank">Xiaoguang Han</a><sup>1, 2, 3</sup><sup>†</sup></span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <!-- <span class="author-block">Institution Name<br>Conferance name and year</span> -->
+                    <span class="author-block"><sup>1</sup>SSE, CUHKSZ</span>&nbsp&nbsp&nbsp
+                    <span class="author-block"><sup>2</sup>FNii-Shenzhen</span>&nbsp&nbsp&nbsp
+                    <span class="author-block"><sup>3</sup>Guangdong Provincial Key Laboratory of Future Networks of Intelligence, CUHKSZ</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <span class="author-block"><sup>4</sup>Tencent Hunyuan3D</span>&nbsp&nbsp&nbsp
+                    <span class="author-block"><sup>5</sup>ByteDance Games</span>
+                    <span class="eql-cntrb"><small><br><sup>†</sup>Corresponding Author</small></span>
+                  </div>
+                  
+
+                  <br><h3 class="title is-3"><i><font color="LightSeaGreen">ICCV 2025 </font><font color="Tomato">(Highlight)</font></i></h3>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <!-- <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span> -->
+
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2507.23483" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/GAP-LAB-CUHK-SZ/stable-sim2real" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser image-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <!-- Your image here -->
+        <img src="static/images/teaser.jpg" alt="MY ALT TEXT" width="800" height="600"/>
+      <h2 class="subtitle has-text-centered">
+        We introduce <b><i><font color="SlateBlue">Stable-Sim2Real</font></i></b> for simulating <i>real-captured</i> 3D data in a <i>data-driven</i> manner.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser image -->
+
+<!-- Teaser video-->
+<!-- <section class="hero teaser"> -->
+  <!-- <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        Your video here
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      <h2 class="subtitle has-text-centered">
+        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      </h2>
+    </div>
+  </div>
+</section> -->
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            3D data simulation aims to bridge the gap between simulated and real-captured 3D data, which is a fundamental problem for real-world 3D visual tasks. 
+            Most 3D data simulation methods inject predefined physical priors but struggle to capture the full complexity of real data. 
+            An optimal approach involves learning an implicit mapping from synthetic to realistic data in a data-driven manner, but progress in this solution has met stagnation in recent studies. 
+            <br>This work explores a new solution path of <i><font color="Tomato">data-driven</font></i> 3D simulation, called Stable-Sim2Real, based on a novel two-stage depth diffusion model. 
+            The initial stage finetunes Stable-Diffusion to generate the residual between the real and synthetic paired depth, producing a stable but coarse depth, where some local regions may deviate from realistic patterns. 
+            To enhance this, both the synthetic and initial output depth are fed into a second-stage diffusion, where diffusion loss is adjusted to prioritize these distinct areas identified by a 3D discriminator. 
+            We provide a new benchmark scheme to evaluate 3D data simulation methods.
+            Extensive experiments show that training the network with the 3D simulated data derived from our method significantly enhances performance in real-world 3D visual tasks. 
+            Moreover, the evaluation demonstrates the high similarity between our 3D simulated data and real-captured patterns.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Method image-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <br>
+      <h2 class="title is-3">Method Overview</h2>
+        <!-- Your image here -->
+        <img src="static/images/pipeline.jpg" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        <b>An overview of our framework</b>.
+        Conditioned on CAD (i.e., synthetic) depth maps, our model first generates the residual (i.e., difference) between real-captured and CAD depth maps, producing <i>stable but coarse</i> depth maps.
+        Next, the Stage-I output is projected into 3D and sent to a 3D discriminator, to <i>identify the unsatisfactory local areas</i> that are distinct from real-captured patterns. 
+        Later, our Stage-II diffusion is conditioned on both CAD and Stage-I output, where the training loss of Stage-II is <i>re-weighted to be specialized on enhancing unsatisfactory areas</i> of Stage-I output. 
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End method image -->
+
+
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Animated Qualitative Comparison</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <center>
+          <video poster="" id="video1" autoplay controls muted loop width="900" height="600">
+            <!-- Your video file here -->
+            <source src="static/videos/lasa_sim2real.mp4"
+            type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            <b>Qualitative 3D simulation results</b> on LASA.
+          </h2>
+        </center>
+        </div>
+        <div class="item item-video2">
+          <center>
+          <video poster="" id="video2" autoplay controls muted loop width="900" height="600">
+            <!-- Your video file here -->
+            <source src="static/videos/shapenet_sim2real.mp4"
+            type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            <b>Qualitative 3D simulation results </b> on ShapeNet (out-of-domain).
+          </h2>
+        </center>
+        </div>
+        <div class="item item-video3">
+          <center>
+          <video poster="" id="video3" autoplay controls muted loop width="900" height="600">
+            <!-- Your video file here -->
+            <source src="static/videos/lasa_reconstruction.mp4"
+            type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            <b>Qualitative benchmark results</b> of using the simulated data from different methods for training 3D instance reconstruction model.
+          </h2>
+        </center>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Qualitative Comparison</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+      <div class="item">
+        <center>
+        <!-- Your image here -->
+        <img src="static/images/lasa_sim_result.jpg" alt="MY ALT TEXT" width="1000" height="600"/>
+        <h2 class="subtitle has-text-centered">
+          <b>Qualitative 3D simulation results</b> on LASA.
+       </h2>
+      </center>
+     </div>
+     <div class="item">
+      <center>
+      <!-- Your image here -->
+      <img src="static/images/lasa_sim_result_depth.jpg" alt="MY ALT TEXT" width="700" height="900"/>
+      <h2 class="subtitle has-text-centered">
+        <b>Qualitative depth/3D simulation results </b> on LASA.
+      </h2>
+    </center>
+    </div>
+     <div class="item">
+      <center>
+      <!-- Your image here -->
+      <img src="static/images/syn_sim_result.jpg" alt="MY ALT TEXT" width="1000" height="900"/>
+      <h2 class="subtitle has-text-centered">
+        <b>Qualitative 3D simulation results </b> on ShapeNet (out-of-domain).
+      </h2>
+    </center>
+    </div>
+    <div class="item">
+      <center>
+      <!-- Your image here -->
+      <img src="static/images/syn_sim_result_depth.jpg" alt="MY ALT TEXT" width="700" height="900"/>
+      <h2 class="subtitle has-text-centered">
+        <b>Qualitative depth/3D simulation results </b> on ShapeNet (out-of-domain).
+      </h2>
+    </center>
+    </div>
+    <div class="item">
+      <center>
+      <!-- Your image here -->
+      <img src="static/images/lasa_recon_result_supple_v2.jpg" alt="MY ALT TEXT" width="800" height="1000"/>
+      <h2 class="subtitle has-text-centered">
+        <b>Qualitative benchmark results</b> of using the simulated data from different methods for training 3D instance reconstruction model.
+      </h2>
+    </center>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+
+
+<!-- Youtube video -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      Paper video.
+      <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video">
+            Youtube embed code here
+            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End youtube video -->
+
+
+
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{xu2025sim2real,
+        title={Stable-Sim2Real: Exploring Simulation of Real-Captured 3D Data with Two-Stage Depth Diffusion}, 
+        author={Mutian Xu and Chongjie Ye and Haolin Liu and Yushuang Wu and Jiahao Chang and Xiaoguang Han},
+        year={2025},
+        booktitle = {International Conference on Computer Vision (ICCV)}
+  }</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
