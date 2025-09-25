@@ -53,8 +53,8 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <img src="static/images/icon_final.png" alt="" width="200" height="50"/>
-            <h1 class="title is-1 publication-title">Stable-Sim2Real: 
-              <br>Exploring Simulation of Real-Captured 3D Data with Two-Stage Depth Diffusion</h1>
+            <h1 class="title is-1 publication-title">VC-Agent: 
+              <br>An Interactive Agent for Customized Video Dataset Collection</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
                 <span class="author-block">
@@ -63,7 +63,7 @@
                 <a href="https://mutianxu.github.io/" target="_blank">Mutian Xu</a><sup>1</sup><sup>†</sup>,</span>
                     <a href="" target="_blank">Yiming Hao</a><sup>1</sup>,</span>
                     <span class="author-block">
-                    <a href="" target="_blank">Kun Zhou</a><sup>1</sup>,</span>
+                    <a href="" target="_blank">Kun Zhou</a><sup>1,6</sup>,</span>
                     <span class="author-block">
                       <a href="https://scholar.google.com/citations?user=HA5zLp4AAAAJ&hl=zh-CN" target="_blank">Jiahao Chang</a><sup>1</sup>,</span>
                       <span class="author-block">
@@ -82,7 +82,8 @@
                     <span class="author-block"><sup>2</sup>FNii-Shenzhen</span>&nbsp&nbsp&nbsp
                     <span class="author-block"><sup>3</sup>Guangdong Provincial Key Laboratory of Future Networks of Intelligence, CUHKSZ</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                     <span class="author-block"><sup>4</sup>Kuaishou Technology</span>&nbsp&nbsp&nbsp
-                    <span class="author-block"><sup>5</sup>HKUST</span>
+                    <span class="author-block"><sup>5</sup>HKUST</span>&nbsp&nbsp&nbsp
+                    <span class="author-block"><sup>6</sup>Shenzhen University</span>
                   </div>
                 <span class="eql-cntrb"><small><br><sup>†</sup>Corresponding Author</small></span>
                   <!-- <br><h3 class="title is-3"><i><font color="LightSeaGreen">ICCV 2025 </font><font color="Tomato">(Highlight)</font></i></h3> -->
@@ -112,7 +113,7 @@
                   </span> -->
 
                   <!-- ArXiv abstract Link -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://arxiv.org/abs/2507.23483" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -120,10 +121,10 @@
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
 
                   <!-- Github link -->
-                  <span class="link-block">
+                  <!-- <span class="link-block">
                     <a href="https://github.com/GAP-LAB-CUHK-SZ/stable-sim2real" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -131,7 +132,7 @@
                     </span>
                     <span>Code</span>
                   </a>
-                </span>
+                </span> -->
 
             </div>
           </div>
@@ -148,7 +149,8 @@
         <!-- Your image here -->
         <img src="static/images/teaser.jpg" alt="MY ALT TEXT" width="800" height="600"/>
       <h2 class="subtitle has-text-centered">
-        We introduce <b><i><font color="SlateBlue">Stable-Sim2Real</font></i></b> for simulating <i>real-captured</i> 3D data in a <i>data-driven</i> manner.
+        We propose <b><i><font color="SlateBlue"></font>VC-Agent</font></i></b> , the first interactive MLLM-based agent that can effectively <i></i>scale-up</i> the collection of <i>customized video datasets</i> from Internet. 
+
       </h2>
     </div>
   </div>
@@ -179,15 +181,15 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            3D data simulation aims to bridge the gap between simulated and real-captured 3D data, which is a fundamental problem for real-world 3D visual tasks. 
-            Most 3D data simulation methods inject predefined physical priors but struggle to capture the full complexity of real data. 
-            An optimal approach involves learning an implicit mapping from synthetic to realistic data in a data-driven manner, but progress in this solution has met stagnation in recent studies. 
-            <br>This work explores a new solution path of <i><font color="Tomato">data-driven</font></i> 3D simulation, called Stable-Sim2Real, based on a novel two-stage depth diffusion model. 
-            The initial stage finetunes Stable-Diffusion to generate the residual between the real and synthetic paired depth, producing a stable but coarse depth, where some local regions may deviate from realistic patterns. 
-            To enhance this, both the synthetic and initial output depth are fed into a second-stage diffusion, where diffusion loss is adjusted to prioritize these distinct areas identified by a 3D discriminator. 
-            We provide a new benchmark scheme to evaluate 3D data simulation methods.
-            Extensive experiments show that training the network with the 3D simulated data derived from our method significantly enhances performance in real-world 3D visual tasks. 
-            Moreover, the evaluation demonstrates the high similarity between our 3D simulated data and real-captured patterns.
+            Facing scaling laws, video data from the internet becomes increasingly important. However, collecting extensive videos that meet
+            specific needs is extremely labor-intensive and time-consuming. In this work, we study the way to expedite this collection process and
+            propose VC-Agent, the first interactive agent that is able to understand users’ queries and feedback, and accordingly retrieve/scale up
+            relevant video clips with minimal user input. Specifically, considering the user interface, our agent defines various user-friendly ways
+            for the user to specify requirements based on textual descriptions and confirmations. As for agent functions, we leverage existing
+            multi-modal large language models to connect the user's requirements with the video content. More importantly, we propose two
+            novel filtering policies that can be updated when user interaction is continually performed. Finally, we provide a new benchmark
+            for personalized video dataset collection, and carefully conduct the user study to verify our agent’s usage in various real scenarios.
+            Extensive experiments demonstrate the effectiveness and efficiency of our agent for customized video dataset collection.
           </p>
         </div>
       </div>
@@ -206,9 +208,13 @@
         <img src="static/images/pipeline.jpg" alt="MY ALT TEXT"/>
       <h2 class="subtitle has-text-centered">
         <b>An overview of our framework</b>.
-        Conditioned on CAD (i.e., synthetic) depth maps, our model first generates the residual (i.e., difference) between real-captured and CAD depth maps, producing <i>stable but coarse</i> depth maps.
-        Next, the Stage-I output is projected into 3D and sent to a 3D discriminator, to <i>identify the unsatisfactory local areas</i> that are distinct from real-captured patterns. 
-        Later, our Stage-II diffusion is conditioned on both CAD and Stage-I output, where the training loss of Stage-II is <i>re-weighted to be specialized on enhancing unsatisfactory areas</i> of Stage-I output. 
+         The illustration of the entire workflow of our VC-Agent. It mainly consists of <i>User Interface</i> (front-end,  shown in the left panel) and <i>Agent Functions</i> (back-end, shown in the right panel). Initially, the user interacts with the agent to express their coarse demands 𝑄. Upon receiving 𝑄, our agent controls the Video Proposal module to download and retrieve candidate videos. Next, several candidates 𝑉𝑟 will be sent back to the user, requiring them to provide the accepted/rejected video set 𝑉+/𝑉− , and comment set 𝐶. Subsequently, 𝑉+, 𝑉− and 𝐶 will guide ourn agent to define/update the Filtering Policy. The updated policy is then used to filter candidate videos, after which a new batch of video samples 𝑉 will be returned to the user again for the next interaction iteration. The whole process will be iteratively conducted until the user is satisfied with all returned videos. Finally, our agent will begin to construct the dataset in a fully automatic manner.
+
+      </h2>
+
+      <img src="static/images/pipeline_doublecheck.jpg" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        <b>The overview of our user-assisted double-check strategy</b>. Samples with low confidence are retained in a dedicated buffer. Once 100 such samples have been accumulated, a subset is randomly selected for user review during the interaction phase, prompting the user to verify them again. 
       </h2>
     </div>
   </div>
@@ -217,59 +223,29 @@
 
 
 <!-- Video carousel -->
-<!-- 
+
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Animated Qualitative Comparison</h2>
-      <div id="results-carousel" class="carousel results-carousel">
+      <h2 class="title is-3">User Interface Demo</h2>
 
 
         <div class="item item-video1">
           <center>
           <video poster="" id="video1" autoplay controls muted loop width="900" height="600">
             <!-- Your video file here -->
-            <source src="static/videos/lasa_sim2real.mp4"
+            <source src="static/videos/demo720.mp4"
             type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-            <b>Qualitative 3D simulation results</b> on LASA.
+            User Interface Demo of <b>VC-Agent</b> .
           </h2>
         </center>
         </div>
 
-
-        <div class="item item-video2">
-          <center>
-          <video poster="" id="video2" autoplay controls muted loop width="900" height="600">
-            <!-- Your video file here -->
-            <source src="static/videos/shapenet_sim2real.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered">
-            <b>Qualitative 3D simulation results </b> on ShapeNet (out-of-domain).
-          </h2>
-        </center>
-        </div>
-
-
-
-        <div class="item item-video3">
-          <center>
-          <video poster="" id="video3" autoplay controls muted loop width="900" height="600">
-            <!-- Your video file here -->
-            <source src="static/videos/lasa_reconstruction.mp4"
-            type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered">
-            <b>Qualitative benchmark results</b> of using the simulated data from different methods for training 3D instance reconstruction model.
-          </h2>
-        </center>
-        </div>
-      </div>
     </div>
   </div>
-</section> -->
+</section> 
 
 
 <!-- End video carousel -->
@@ -280,49 +256,42 @@
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Qualitative Comparison</h2>
+      The Qualitative Comparison results of 2 different tasks between: 1. the baseline model. 2. the baseline model finetuned with our collected dataset. 3. the baseline model finetuned with the data manually collected and filtered by LLAVA-OneVision.
+
       <div id="results-carousel" class="carousel results-carousel">
       <div class="item">
         <center>
         <!-- Your image here -->
-        <img src="static/images/lasa_sim_result.jpg" alt="MY ALT TEXT" width="1000" height="600"/>
+        <img src="static/images/t2v.jpg" alt="MY ALT TEXT" width="700" height="900"/>
         <h2 class="subtitle has-text-centered">
-          <b>Qualitative 3D simulation results</b> on LASA.
+          <b>Qualitative results for T2V generation. </b> “Finetune” denotes finetuned using the data from our agent or LLAVA-OneVision. 
        </h2>
       </center>
      </div>
      <div class="item">
       <center>
       <!-- Your image here -->
-      <img src="static/images/lasa_sim_result_depth.jpg" alt="MY ALT TEXT" width="700" height="900"/>
+      <img src="static/images/t2v_extra.jpg" alt="MY ALT TEXT" width="1000" height="900"/>
       <h2 class="subtitle has-text-centered">
-        <b>Qualitative depth/3D simulation results </b> on LASA.
+        <b>More qualitative results for T2V generation. </b> “Finetune” denotes finetuned using the data from our agent or LLAVA-OneVision. 
       </h2>
     </center>
     </div>
      <div class="item">
       <center>
       <!-- Your image here -->
-      <img src="static/images/syn_sim_result.jpg" alt="MY ALT TEXT" width="1000" height="900"/>
+      <img src="static/images/pose.jpg" alt="MY ALT TEXT" width="700" height="900"/>
       <h2 class="subtitle has-text-centered">
-        <b>Qualitative 3D simulation results </b> on ShapeNet (out-of-domain).
+        <b>Qualitative results for biped cartoon pose estimation.</b>  “Finetune” denotes finetuned using the data from our agent. 
       </h2>
     </center>
     </div>
     <div class="item">
       <center>
       <!-- Your image here -->
-      <img src="static/images/syn_sim_result_depth.jpg" alt="MY ALT TEXT" width="700" height="900"/>
+      <img src="static/images/pose_extra.jpg" alt="MY ALT TEXT" width="1000" height="900"/>
       <h2 class="subtitle has-text-centered">
-        <b>Qualitative depth/3D simulation results </b> on ShapeNet (out-of-domain).
-      </h2>
-    </center>
-    </div>
-    <div class="item">
-      <center>
-      <!-- Your image here -->
-      <img src="static/images/lasa_recon_result_supple_v2.jpg" alt="MY ALT TEXT" width="800" height="1000"/>
-      <h2 class="subtitle has-text-centered">
-        <b>Qualitative benchmark results</b> of using the simulated data from different methods for training 3D instance reconstruction model.
+        <b>More qualitative results for biped cartoon pose estimation.</b>  “Finetune” denotes finetuned using the data from our agent. 
       </h2>
     </center>
     </div>
@@ -338,11 +307,10 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@inproceedings{xu2025sim2real,
-        title={Stable-Sim2Real: Exploring Simulation of Real-Captured 3D Data with Two-Stage Depth Diffusion}, 
-        author={Mutian Xu and Chongjie Ye and Haolin Liu and Yushuang Wu and Jiahao Chang and Xiaoguang Han},
+      <pre><code>@inproceedings{zhang2025vcagent,
+        title={VC-Agent: An Interactive Agent for Customized Video Dataset Collection}, 
+        author={Yidan Zhang and Mutian Xu and Yiming Hao and Kun Zhou and Jiahao Chang and Xiaoqiang Liu and Pengfei Wan and Xiaoguang Han},
         year={2025},
-        booktitle = {International Conference on Computer Vision (ICCV)}
   }</code></pre>
     </div>
 </section>
